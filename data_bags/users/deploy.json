@@ -1,0 +1,13 @@
+{
+  "id": "deploy",
+  // generate this with: openssl passwd -1 "plaintextpassword"
+  "password": "$1$pZ9cHYOy$Shg7sWSaAzBvAFw/hhge81",
+  // the below should contain a list of ssh public keys which should
+  // be able to login as deploy
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCz2OGP1J25R5gBd5Q/To9oH6WLW6vUVONKsqZxvmtE9C4PJus6fqDuy/gH4WKmSlo95UT4pA2aHZoImsje4LpweVoz92QM8ftdqq+w+YKSE4ISBCQZzgrzVWai84VniIYsTv7fxeIxflPbhcPx6goITYLcqVBwMvLgQw+RVDCt8+ml4Czl592sO7Pn/x4CO9H0TCmlXhUIOwhNBoSKpVC8TuMt+EtfKA3pi+9ipM+YK/pATRk1+B6ZmXc5J/zhK5dRZK7L7oZPHcXQ4XNmFq9+utVc6ZG1ViOlKnhlOXAH7PtqDWc6g9SLoAUl+QLHm/yZ/qSeyxaO9XfXQK1D/vhH key for jxb"
+  ],
+  "groups": ["rbenv", "sysadmin"],
+  "shell": "\/bin\/bash"
+}
+

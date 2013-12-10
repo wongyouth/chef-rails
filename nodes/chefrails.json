@@ -1,0 +1,9 @@
+{
+  "run_list": [
+    "role[server]"
+    , "role[nginx]"
+    , "role[postgres-server]"
+    , "role[rails-app]"
+    , "role[redis-server]"
+  ]
+}
