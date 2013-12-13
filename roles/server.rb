@@ -18,5 +18,6 @@ run_list *%w[
   recipe[git]
   recipe[openssl]
   recipe[ntp]
+  recipe[byobu]
 ]
 

@@ -3,7 +3,8 @@
     "role[server]"
     , "role[nginx]"
     , "role[postgres-server]"
+    , "role[memcached]"
+    //, "role[redis-server]"
     , "role[rails-app]"
-    , "role[redis-server]"
   ]
 }

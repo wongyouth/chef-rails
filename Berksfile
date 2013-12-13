@@ -1,7 +1,6 @@
 site :opscode
 
 cookbook 'build-essential'
-cookbook 'rbenv-install-rubies'
 cookbook 'git'
 cookbook 'postgresql'
 cookbook 'redisio'
@@ -10,3 +9,10 @@ cookbook 'sudo'
 cookbook 'users'
 cookbook 'chef-solo-search'
 cookbook 'ntp'
+cookbook 'memcached'
+cookbook 'application_ruby'
+cookbook 'rbenv'
+cookbook 'byobu'
+cookbook 'nodejs'
+cookbook 'database'
+
