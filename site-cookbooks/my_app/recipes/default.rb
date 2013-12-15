@@ -64,6 +64,10 @@ application 'my_app' do
     end
   end
 
+  memcached do
+    role 'memcached'
+  end
+
   unicorn do
     worker_processes 2
     port '8000'
