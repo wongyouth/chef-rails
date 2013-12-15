@@ -1,10 +1,10 @@
 {
   "run_list": [
     "role[server]"
-    , "role[nginx]"
     , "role[postgres-server]"
     , "role[memcached]"
     //, "role[redis-server]"
+    //, "role[nginx]"
     , "role[rails-app]"
   ]
 }
