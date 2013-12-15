@@ -54,9 +54,8 @@ application 'my_app' do
     bundler true
     bundle_command  '/opt/rbenv/shims/bundle'
 
-    database_master_role 'postgres_server'
+    database_master_role 'postgres-server'
     database do
-      host 'localhost'
       database 'my_app'
       username 'app'
       password 'app'
@@ -67,11 +66,11 @@ application 'my_app' do
 
   unicorn do
     worker_processes 2
+    port '8000'
   end
 
   nginx_load_balancer do
     only_if { node['roles'].include?('nginx') }
     application_server_role 'rails-app'
-    application_port 8080
   end
 end
