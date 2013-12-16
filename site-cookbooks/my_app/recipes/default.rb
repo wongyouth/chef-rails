@@ -48,7 +48,7 @@ application 'my_app' do
   owner 'deploy'
   group 'deploy'
 
-  repository 'https://github.com/ouyangzhiping/railsbox-example-app1.git'
+  repository 'https://github.com/wongyouth/website.git'
 
   rails do
     bundler true
@@ -63,6 +63,8 @@ application 'my_app' do
       encoding 'utf8'
     end
   end
+
+  migrate true
 
   memcached do
     role 'memcached'
