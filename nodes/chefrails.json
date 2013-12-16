@@ -1,10 +1,20 @@
 {
+  "postgresql": {
+    "pg_hba": [
+      { "type": "local", "db": "all", "user": "postgres", "addr": null, "method": "ident" },
+      { "type": "local", "db": "all", "user": "all", "addr": null, "method": "ident" },
+      { "type": "host", "db": "all", "user": "all", "addr": "127.0.0.1/32", "method": "md5" },
+      { "type": "host", "db": "all", "user": "all", "addr": "::1/128", "method": "md5" },
+      { "comment": "# database for my_app",
+        "type": "host", "db": "my_app", "user": "app", "addr": "0.0.0.0/0", "method": "md5" }
+    ]
+  },
   "run_list": [
     "role[server]"
     , "role[postgres-server]"
     , "role[memcached]"
     //, "role[redis-server]"
-    //, "role[nginx]"
+    , "role[nginx]"
     , "role[rails-app]"
   ]
 }
