@@ -9,6 +9,9 @@
         "type": "host", "db": "my_app", "user": "app", "addr": "0.0.0.0/0", "method": "md5" }
     ]
   },
+  "rails": {
+    "repository": "https://github.com/wongyouth/website.git"
+  },
   "run_list": [
     "role[server]"
     , "role[postgres-server]"

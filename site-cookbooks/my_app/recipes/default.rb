@@ -48,7 +48,7 @@ application 'my_app' do
   owner 'deploy'
   group 'deploy'
 
-  repository 'https://github.com/wongyouth/website.git'
+  repository node["rails"]["repository"]
 
   rails do
     bundler true
@@ -73,6 +73,28 @@ application 'my_app' do
   unicorn do
     worker_processes 2
     port '8000'
+    preload_app true
+    copy_on_write true
+
+    before_fork <<-'EOS'
+      defined?(ActiveRecord::Base) and
+        ActiveRecord::Base.connection.disconnect!
+
+      old_pid = "#{server.config[:pid]}.oldbin"
+      if File.exists?(old_pid) && server.pid != old_pid
+        begin
+          sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+          Process.kill(sig, File.read(old_pid).to_i)
+        rescue Errno::ENOENT, Errno::ESRCH
+          # someone else did our job for us
+        end
+      end
+    EOS
+
+    after_fork <<-'EOS'
+      defined?(ActiveRecord::Base) and
+        ActiveRecord::Base.establish_connection
+    EOS
   end
 
   nginx_load_balancer do
