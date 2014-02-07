@@ -53,6 +53,7 @@ application 'my_app' do
   rails do
     bundler true
     bundle_command  '/opt/rbenv/shims/bundle'
+    precompile_assets true
 
     database_master_role 'postgres-server'
     database do
