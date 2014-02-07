@@ -3,12 +3,12 @@ description "Server"
 
 default_attributes(
   "authorization" => {
-  "sudo" => {
-    "groups" => ["sudo", "admin"],
-    "passwordless" => true
+    "sudo" => {
+      "groups" => ["sudo", "admin"],
+      "passwordless" => true
+    }
   }
-}
-                   )
+)
 
 run_list *%w[
   recipe[build-essential]

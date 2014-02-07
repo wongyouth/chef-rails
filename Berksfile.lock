@@ -33,6 +33,11 @@
     "application_nginx": {
       "locked_version": "2.0.2"
     },
+    "application_puma": {
+      "locked_version": "0.0.2",
+      "git": "https://github.com/timsly/application_puma.git",
+      "ref": "1c8da69ce7a579b43a3ba9c7e4620e185a3f8fb3"
+    },
     "rbenv": {
       "locked_version": "1.6.5"
     },
@@ -95,6 +100,12 @@
     },
     "ohai": {
       "locked_version": "1.1.12"
+    },
+    "puma": {
+      "locked_version": "0.1.4"
+    },
+    "monit": {
+      "locked_version": "0.7.1"
     },
     "mysql": {
       "locked_version": "4.0.10"
