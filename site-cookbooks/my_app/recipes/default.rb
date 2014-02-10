@@ -11,6 +11,7 @@ include_recipe 'rbenv'
 include_recipe 'rbenv::ruby_build'
 include_recipe "runit"
 include_recipe "database::postgresql"
+include_recipe "monit"
 
 rbenv_ruby '2.0.0-p353' do
   global true
