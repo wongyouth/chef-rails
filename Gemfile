@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "http://ruby.taobao.org"
 
 gem 'berkshelf'
 gem 'knife-solo'
