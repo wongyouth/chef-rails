@@ -16,4 +16,5 @@ cookbook 'rbenv'
 cookbook 'byobu'
 cookbook 'nodejs'
 cookbook 'database'
+cookbook 'locales'
 

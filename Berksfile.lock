@@ -9,6 +9,7 @@ DEPENDENCIES
   chef-solo-search
   database
   git
+  locales
   memcached
   nodejs
   ntp
@@ -62,6 +63,7 @@ GRAPH
   homebrew (1.12.0)
     build-essential (>= 2.1.2)
   iptables (1.0.0)
+  locales (0.3.1)
   logrotate (1.9.1)
   memcached (1.7.2)
     runit (~> 1.0)
