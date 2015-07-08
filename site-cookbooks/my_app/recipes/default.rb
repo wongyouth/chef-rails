@@ -7,42 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'rbenv'
-include_recipe 'rbenv::ruby_build'
-include_recipe "runit"
-include_recipe "database::postgresql"
-include_recipe "monit"
-
-rbenv_ruby '2.0.0-p353' do
-  global true
-end
-
-rbenv_gem 'bundler' do
-  ruby_version '2.0.0-p353'
-end
-
-postgresql_database_user 'app' do
-  connection(
-    host: 'localhost',
-    username: 'postgres',
-    password: 'postgres'
-  )
-  password 'app'
-  action :create
-end
-
-postgresql_database 'my_app' do
-  owner 'app'
-  action :create
-  encoding 'utf8'
-  collation 'en_US.utf8'
-  template 'template0'
-  connection(
-    host: 'localhost',
-    username: 'postgres',
-    password: 'postgres'
-  )
-end
+include_recipe "my_app::ruby"
+include_recipe "my_app::postgresql"
 
 application 'my_app' do
   path '/u/apps/my_app'
