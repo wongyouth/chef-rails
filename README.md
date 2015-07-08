@@ -43,3 +43,29 @@ What we need to do with Vagrant is to setup a login username and server info.
 
     knife solo bootstrap vagrant@chefrails
 
+# QA
+
+1. Exit with error message: DEBUG: chef_gem[treetop] no installed version found for treetop (>= 1.4)
+
+That because Chef cannot get gem `treetop` installed from https://rubygems.org in China.
+
+Workaround is to change gem sources to taobao mirror.
+
+/opt/chef/embedded/bin/gem sources --remove https://rubygems.org/
+/opt/chef/embedded/bin/gem sources --add http://ruby.taobao.org/
+
+2. `apt-get update` caused a lot of time to complete.
+
+Change to a mirror in China.
+
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo sed -e 's/us.archive/cn.archive/' -i /etc/apt/sources.list
+
+
+3. Server hanging while install chef
+
+It's difficult to install chef within China. You can download chef client from chef.io and install directly on your server.
+
+If you use Ubuntu, you can download a debian version of chef client. and install it by
+
+    dpkg -i chef_12.4.0-1_amd64.deb
