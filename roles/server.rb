@@ -14,10 +14,10 @@ run_list *%w[
   recipe[build-essential]
   recipe[sudo]
   recipe[chef-solo-search]
-  recipe[users::sysadmins]
   recipe[git]
   recipe[openssl]
   recipe[ntp]
   recipe[byobu]
 ]
 
+#  recipe[users::sysadmins]
