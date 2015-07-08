@@ -1,4 +1,4 @@
-source "https://supermarket.chef.io"
+source "http://supermarket.chef.io"
 
 cookbook 'build-essential'
 cookbook 'git'
@@ -10,7 +10,7 @@ cookbook 'chef-solo-search'
 cookbook 'ntp'
 cookbook 'memcached'
 cookbook 'application_ruby'
-cookbook 'application_nginx'
+cookbook 'application_nginx', '~> 2.0.2'
 cookbook 'application_puma', git: 'https://github.com/timsly/application_puma.git'
 cookbook 'rbenv'
 cookbook 'byobu'
