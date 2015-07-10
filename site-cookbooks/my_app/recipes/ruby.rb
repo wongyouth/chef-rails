@@ -14,3 +14,7 @@ rbenv_gem 'bundler' do
   ruby_version '2.2.2'
 end
 
+rbenv_gem 'puma' do
+  ruby_version '2.2.2'
+end
+
